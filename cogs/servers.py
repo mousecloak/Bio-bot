@@ -3,31 +3,35 @@ import discord
 from discord.ext import commands
 import psutil
 
+
+
+processes = {
+    "ark": "ArkAscendedServer.exe",
+    "palworld": "PalServer-Win64-Shipping-Cmd.exe",
+    "enshrouded": "enshrouded.exe",
+    # Add more processes as needed
+}
+
+
 class Hosting(commands.Cog):
     def __init__(self, client):
         self.client = client
 
-
-
-
-
-# Create an array of .exe and have the bot comb to see if any are running, if so, reply with game thats currently running.
-
-# create list of login details (IP, port, password) to login
-
-
-
     @commands.command()
-    async def server(self, ctx, *, arg):
-        if arg.lower() == "ark":
-            process_name = "ArkAscendedServer.exe"
-            # Check if the process is running
+    async def server(self, ctx):
+        # Define a dictionary of processes to check
+
+        running_processes = []
+
+        # Check each process to see if it is running
+        for name, process_name in processes.items():
             if any(proc.name() == process_name for proc in psutil.process_iter()):
-                await ctx.send(f"Ark server is running.")
-            else:
-                await ctx.send(f"Ark server is not running.")
+                running_processes.append(f"**{name}**")
+
+        if running_processes:
+            await ctx.send(f"The following server(s) are running:   {', '.join(running_processes)}.")
         else:
-            await ctx.send("Status unknown, please contact host.")
+            await ctx.send("No specified servers are currently running.")
 
 
 async def setup(client):
