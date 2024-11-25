@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "bio-bot"
+version = "0.1.0"
+description = "A Discord bot"
+authors = ["Bi0force1 <Bi0force1@users.noreply.github.com>"]
+readme = "README.md"
+package-mode = false
+
+[tool.poetry.dependencies]
+python = "^3.11"
+
+discord = "^2.3.2"
+psutil = "^6.1.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

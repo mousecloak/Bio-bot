@@ -1,13 +1,28 @@
 # Bio-bot
-python build for discord bot
+
+A Discord bot, built in python.
+
+## Installation
+
+This project can be built with [poetry](https://python-poetry.org/docs/).
+
+First ensure that [poetry is installed](https://python-poetry.org/docs/#installation) and available on your path.
+
+To install the dependencies of this project, run
+
+```shell
+poetry install
+```
+
+## Run
+
+To run the project inside a poetry virtual environment, run
 
 
-main.py and config.py live in main folder
+```shell
+poetry run python main.py
+```
 
-all other files should be in a cogs folder.
+## Development
 
-
-
-
-
-
+For more information on using poetry to manage dependencies, refer to the [poetry documentation.](https://python-poetry.org/docs/basic-usage/#using-your-virtual-environment)
