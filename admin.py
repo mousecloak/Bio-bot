@@ -19,10 +19,10 @@ class Admin(commands.Cog):
     async def group(self, ctx, keyword: str):
         # Define a mapping of keywords to role IDs
         role_map = {
-            "Juicers": 1150441555631538396,
-            "COD": 1175992637313007676,
-            "PGA": 1150441283299586108,
-            "Palworld": 1200117627490664560
+            "Juicers": 12345,
+            "COD": 12345,
+            "PGA": 12345,
+            "Palworld": 12345
         }
         
         # Check if the keyword exists in the mapping
