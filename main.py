@@ -1,9 +1,9 @@
 # Import required libraries
+import asyncio
+import os
+
 import discord
 from discord.ext import commands
-from discord.ui import Select
-import os
-import asyncio
 from dotenv import load_dotenv
 
 # set common variables

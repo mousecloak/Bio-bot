@@ -1,9 +1,8 @@
 # Import required libraries
+import random
+
 import discord
 from discord.ext import commands
-import os
-import asyncio
-import random
 
 # set common variables
 intents = discord.Intents.all()

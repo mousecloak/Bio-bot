@@ -1,9 +1,9 @@
 # setup imports
+import os
+
+import aiohttp
 import discord
 from discord.ext import commands
-import aiohttp
-import asyncio
-import os
 
 WEATHER_KEY = os.environ["WEATHER_KEY"]
 WEATHER_KEY2 = os.environ["WEATHER_KEY2"]

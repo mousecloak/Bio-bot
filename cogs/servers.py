@@ -1,7 +1,7 @@
 # setup imports
-import discord
-from discord.ext import commands
 import psutil
+from discord.ext import commands
+
 
 
 

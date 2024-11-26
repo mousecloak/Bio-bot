@@ -1,7 +1,8 @@
 # setup imports
+import random
+
 import discord
 from discord.ext import commands
-import random
 
 # set common variables
 intents = discord.Intents.all()

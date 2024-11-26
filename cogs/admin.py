@@ -1,9 +1,6 @@
 # setup imports
 import discord
 from discord.ext import commands
-from discord import Embed, Member
-import asyncio
-
 
 # set common variables
 intents = discord.Intents.all()
