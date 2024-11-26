@@ -3,19 +3,20 @@ import discord
 from discord.ext import commands
 import aiohttp
 import asyncio
-from config import WEATHER_KEY
-from config import WEATHER_KEY2
+import os
+
+WEATHER_KEY = os.environ["WEATHER_KEY"]
+WEATHER_KEY2 = os.environ["WEATHER_KEY2"]
 
 # set common variables
 intents = discord.Intents.all()
 client = commands.Bot(command_prefix="!", intents=intents)
 
-
 class Weather(commands.Cog):
     def __init__(self, client):
         self.client = client
 
-    # Weather querry and response
+    # Weather query and response
     @client.command()
     async def weather(self, ctx: commands.Context, city: str):
 

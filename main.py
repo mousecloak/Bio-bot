@@ -4,16 +4,17 @@ from discord.ext import commands
 from discord.ui import Select
 import os
 import asyncio
-
-#import modules
-from config import TOKEN
+from dotenv import load_dotenv
 
 # set common variables
 intents = discord.Intents.all()
 client = commands.Bot(command_prefix="!", intents=intents)
+load_dotenv()
+
 intents.message_content = True
 intents.messages = True
 intents.reactions = True
+token = os.environ["TOKEN"]
 
 # Run bot on discord
 @client.event
@@ -30,7 +31,7 @@ async def load_extensions():
 async def main():
     async with client:
         await load_extensions()
-        await client.start(TOKEN)
+        await client.start(token)
 
 asyncio.run(main())
-client.run(TOKEN)
+client.run(token)
