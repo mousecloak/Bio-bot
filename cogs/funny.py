@@ -94,7 +94,6 @@ class Funny(commands.Cog):
         await ctx.send(f"{random.choice(response)}")
 
 
-
     @client.command()
     async def goatcam(self, ctx):
         response = [ "The Gavlebocken webcam is currently disabled, but will return in December." ]
@@ -122,7 +121,6 @@ class Funny(commands.Cog):
         await ctx.send(f'{ctx.author.mention} rolled: {result_str}\nFor a total of: {total}')
 
 
-
     @client.command()
     async def coin(self, ctx: commands.Context):
         outcome = random.choice(["Heads", "Tails"])
@@ -131,4 +129,3 @@ class Funny(commands.Cog):
 
 async def setup(client):
     await client.add_cog(Funny(client))
-
