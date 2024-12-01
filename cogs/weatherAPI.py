@@ -12,6 +12,7 @@ WEATHER_KEY2 = os.environ["WEATHER_KEY2"]
 intents = discord.Intents.all()
 client = commands.Bot(command_prefix="!", intents=intents)
 
+
 class Weather(commands.Cog):
     def __init__(self, client):
         self.client = client
@@ -108,7 +109,6 @@ class Forecast(commands.Cog):
                 await ctx.send(embed=embed)
 
 
-
 class Weather2(commands.Cog):
     def __init__(self, client):
         self.client = client
@@ -162,8 +162,6 @@ class Weather2(commands.Cog):
                     embed.set_thumbnail(url=image_url)
 
                     await ctx.send(embed=embed)
-
-
 
 
 class Forecast2(commands.Cog):
@@ -236,9 +234,6 @@ class Forecast2(commands.Cog):
                             embed.set_thumbnail(url=image_url)
 
                     await ctx.send(embed=embed)
-
-
-
 
 
 async def setup(client):

@@ -3,9 +3,11 @@ import discord
 from discord.ext import commands
 import random
 
+
 # set common variables
 intents = discord.Intents.all()
 client = commands.Bot(command_prefix="!", intents=intents)
+
 
 reps = [
     ("[Burpees](https://i0.wp.com/joshuaspodek.com/wp-content/uploads/2012/12/burpees1.png?ssl=1)",),
@@ -35,6 +37,7 @@ reps = [
     ("[Squats](https://www.besthealthmag.ca/wp-content/uploads/2008/10/how-to-do-squats-properly-.jpg?resize=768%2C512)",)
 ]
 
+
 holds = [
     ("[Down Dog](https://www.ekhartyoga.com/media/images/articles/content/Downward-Facing-Dog-Pose-Adho-Mukha-Svanasana.jpg)",),
     ("[Down Dog to Plank](https://images.ctfassets.net/p0sybd6jir6r/5sD6NBz2zoPfYAEDblMu5C/57dd98575fd9937e6bc7ebf9a0aeac29/dolphin-flow.png)",),
@@ -44,6 +47,7 @@ holds = [
     ("[Plank - Side](https://images.squarespace-cdn.com/content/v1/5d31ed671abe780001b2964d/1604695972703-K37B5ZAVVV6FU6L62I7U/Jacy+Cunningham+doing+Forearm+Side+Plank?format=1000w)",),
 ]
 
+
 weight = [
     "5",
     "8",
@@ -52,6 +56,7 @@ weight = [
     "15",
     "20"
 ]
+
 
 time = [
     ":15",
@@ -65,9 +70,11 @@ time = [
     "2:00"
 ]
 
+
 class Workout(commands.Cog):
     def __init__(self, client):
         self.client = client
+
 
     @commands.command()
     async def workout(self, ctx):
@@ -93,11 +100,13 @@ class Workout(commands.Cog):
 async def on_ready():
     print(f'Logged in as {client.user}')
 
+
 @client.command()
 async def randomize(ctx):
     selected_answers = random.sample(reps, k=3)
     response = "\n".join([f'Answer{i + 1}: {answer}' for i, answer in enumerate(selected_answers)])
     await ctx.send(response)
+
 
 async def setup(client):
     await client.add_cog(Workout(client))

@@ -1,8 +1,6 @@
 # Import required libraries
 import discord
 from discord.ext import commands
-import os
-import asyncio
 import random
 
 # set common variables
@@ -106,25 +104,23 @@ class Funny(commands.Cog):
         await ctx.send(f"{(response)}")
 
 
-    @client.command(name='dice') 
-    async def roll(self, ctx, dice: str): 
-        try: 
-            rolls, limit = map(int, dice.split('d')) 
-        except Exception as e: 
-            await ctx.send('Format has to be in #d#') 
-            return 
-    
-        results = [random.randint(1, limit) for _ in range(rolls)] 
-        result_str = ', '.join(str(result) for result in results) 
-        total = sum(results) 
-        
-        await ctx.send(f'{ctx.author.mention} rolled: {result_str}\nFor a total of: {total}')
-
-
     @client.command()
     async def coin(self, ctx: commands.Context):
         outcome = random.choice(["Heads", "Tails"])
         await ctx.send(f'{ctx.author.mention} flipped a coin and got **{outcome}**!')
+
+
+    @client.command(name='dice')
+    async def dice(self, ctx, dice: str):
+        try:
+            rolls, limit = map(int, dice.split('d'))
+        except Exception as e:
+            await ctx.send('Format has to be in #d#')
+            return
+        results = [random.randint(1, limit) for _ in range(rolls)]
+        result_str = ', '.join(str(result) for result in results)
+        total = sum(results)
+        await ctx.send(f'{ctx.author.mention} rolled: {result_str}\nFor a total of: {total}')
 
 
 async def setup(client):
